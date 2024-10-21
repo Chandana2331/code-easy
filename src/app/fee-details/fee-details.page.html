@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="dark">
+   
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Fee Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-card routerLink="/fee-details">
+    
+    <ion-card-content>
+      <h1 class="fee-title">For STATE Syllabus</h1>
+      <p class="fee-details">1st-8th Standard: 800 Rs</p>
+      <p class="fee-details">9th-10th Standard: 1500 Rs</p>
+      <h1 class="fee-title">For CBSE Syllabus</h1>
+      <p class="fee-details">1st-8th Standard: 1000 Rs</p>
+      <p class="fee-details">9th-10th Standard: 2000 Rs</p>
+      <h1 class="fee-title">For ICSE Syllabus</h1>
+      <p class="fee-details">8th Standard: 1500 Rs</p>
+      <p class="fee-details">9th-10th Standard: 2500 Rs</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<style>
+  
+  ion-card {
+    --background: #f3f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+
+  ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .fee-title {
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+    border-bottom: 2px solid #66a9f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .fee-details {
+    color: #666;
+    font-size: 16px;
+    margin: 8px 0;
+    padding-left: 10px;
+    background-color: #eaf3ff;
+    border-left: 4px solid #66a9f0;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>

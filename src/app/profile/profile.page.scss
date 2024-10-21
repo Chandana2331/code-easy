@@ -1,0 +1,58 @@
+.page-profile {
+    ion-content {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+  
+      .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        margin-top: 20px; 
+  
+        .profile-logo {
+          width: 100px; 
+          height: 100px; 
+          border-radius: 50%; 
+          object-fit: cover; 
+          align-items: center;
+          margin-bottom: 10px; 
+        }
+  
+        .name-card {
+          flex: 1;
+          ion-card-header {
+            text-align: center;
+            color: #f53d3d;
+            font-weight: bold;
+            font-size: 1.4rem;
+          }
+        }
+      }
+  
+      .detail-card {
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+        ion-card-content {
+          font-size: 1.1rem;
+          color: #333;
+  
+          p {
+            margin: 0;
+            strong {
+              color: #f53d3d;
+            }
+          }
+        }
+      }
+  
+      .edit-button {
+        margin-top: 20px; 
+        align-self: center;
+      }
+    }
+  }
+  

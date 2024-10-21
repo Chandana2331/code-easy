@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Staff Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Add Staff Member</h3>
+  
+  <form (ngSubmit)="addStaffMember()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newStaffMember.name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input type="text" [(ngModel)]="newStaffMember.address" name="address" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contact Number</ion-label>
+      <ion-input type="tel" [(ngModel)]="newStaffMember.contactNumber" name="contactNumber" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Designation</ion-label>
+      <ion-input type="text" [(ngModel)]="newStaffMember.designation" name="designation" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Attendance</ion-label>
+      <ion-input type="text" [(ngModel)]="newStaffMember.attendance" name="attendance" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="primary">Add Staff Member</ion-button>
+  </form>
+
+  <ion-card *ngFor="let member of staffMembers">
+    <ion-card-header>
+      <ion-card-title>{{ member.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Address:</strong> {{ member.address }}</p>
+      <p><strong>Contact Number:</strong> {{ member.contactNumber }}</p>
+      <p><strong>Designation:</strong> {{ member.designation }}</p>
+
+      <h4>Attendance:</h4>
+      <div class="calendar">
+        <div *ngFor="let status of member.attendance.split(','); let i = index" 
+             class="calendar-day" 
+             [ngClass]="status.trim().toLowerCase() === 'absent' ? 'absent' : 'present'">
+          {{ i + 1 }}
+        </div>
+      </div>
+
+      <p>
+        <strong>Attendance Stats:</strong>
+        <span>Present: {{ getAttendanceStats(member.attendance.split(',')).presentCount }}</span>, 
+        <span>Absent: {{ getAttendanceStats(member.attendance.split(',')).absentCount }}</span>
+      </p>
+
+      <ion-button (click)="openCalendar(member)" slot="end">Open Calendar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

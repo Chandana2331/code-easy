@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+    
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToAdminLogin()" color="light" fill="clear">Admin Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="assets/WhatsApp_Image_2024-10-07_at_10.39.35_AM-removebg-preview.png" alt="Logo" style="max-width: 60px;" />
+    <img src="assets/WhatsApp_Image_2024-10-03_at_11.56.22_AM__1_-removebg-preview.png" alt="Logo" style="max-width: 150px;" />
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+   
+    <ion-item class="outlined-input" [class.invalid]="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+      <p *ngIf="loginForm.controls['username'].errors?.['required']">Username is required.</p>
+    </ion-text>
+
+    <ion-item class="outlined-input" [class.invalid]="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+      <p *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</p>
+      <p *ngIf="loginForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters.</p>
+    </ion-text>
+
+    <ion-item class="outlined-input" [class.invalid]="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input type="tel" formControlName="phone" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched">
+      <p *ngIf="loginForm.controls['phone'].errors?.['required']">Phone number is required.</p>
+      <p *ngIf="loginForm.controls['phone'].errors?.['pattern']">Enter a valid phone number (10 digits).</p>
+    </ion-text>
+
+    <ion-button color="dark" expand="block" type="submit" [disabled]="loginForm.invalid" style="margin-top: 20px;">Login</ion-button>
+
+    <ion-text color="medium">
+      <p style="text-align: center; margin-top: 20px;">
+        New user? <a (click)="goToRegister()">Register here</a>
+      </p>
+      <p style="text-align: center; margin-top: 10px;">
+        <a (click)="forgotPassword()">Forgot Password?</a>
+      </p>
+    </ion-text>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <div style="text-align: center; font-size: 12px; padding: 10px; color: black;">
+      By logging-in you agree to our <a href="/privacy-policy" style="color: blue;">Privacy Policy</a>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+  ion-content {
+    --background: #f4f6f8;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  ion-toolbar {
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  ion-button {
+    --background: #3880ff;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  ion-input, ion-label {
+    font-family: 'PT Sans', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  ion-text p {
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .outlined-input {
+    --highlight-background: white;
+    --border-color: #ccc;
+    --border-width: 2px;
+    border-radius: 5px;
+  }
+
+  .invalid {
+    --border-color: red !important;
+  }
+</style>

@@ -1,0 +1,26 @@
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .calendar-day {
+    width: 14.28%; // 7 days in a week
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd; // Optional border for clarity
+    cursor: pointer; // Indicate that it's clickable
+  }
+  
+  .present {
+    background-color: green;
+    color: white;
+  }
+  
+  .absent {
+    background-color: red;
+    color: white;
+  }
+  

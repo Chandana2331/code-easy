@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="danger">  
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab1"></ion-back-button>  
+    </ion-buttons>
+    <ion-title>Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Attendance for Student: {{ studentId }}</h2>
+
+  <ion-list *ngIf="attendance">
+    <ion-item *ngFor="let item of attendance">
+      <ion-label>
+        <h3>Date: {{ item.date }}</h3>
+        <p>Status: {{ item.status }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text *ngIf="!attendance">
+    No attendance data found for this student.
+  </ion-text>
+</ion-content>

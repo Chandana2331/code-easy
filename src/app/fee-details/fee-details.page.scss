@@ -1,0 +1,48 @@
+
+  
+  ion-card {
+    --background: #f3f7fa; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 16px; 
+  }
+
+  
+  ion-card-title {
+    font-size: 10px;
+    font-weight: bold;
+    color: #0056b3; 
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+
+  .fee-title {
+    color: #333; 
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left; 
+    border-bottom: 2px solid #66a9f0;
+    padding-bottom: 8px; 
+    margin-bottom: 12px; 
+  }
+
+  
+  .fee-details {
+    color: #666; 
+    font-size: 16px;
+    margin: 8px 0;
+    padding-left: 10px; 
+    background-color: #eaf3ff;
+    border-left: 4px solid #66a9f0; 
+    padding: 8px; 
+    border-radius: 4px;
+  }
+
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+

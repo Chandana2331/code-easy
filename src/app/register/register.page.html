@@ -1,0 +1,221 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="assets/WhatsApp_Image_2024-10-07_at_10.39.35_AM-removebg-preview.png" alt="Logo" style="max-width: 60px;" />
+    <img src="assets/WhatsApp_Image_2024-10-03_at_11.56.22_AM__1_-removebg-preview.png" alt="Logo" style="max-width: 150px;" />
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['username'].hasError('required') && registerForm.controls['username'].touched">
+        Username is required.
+      </ion-text>
+      <ion-text color="danger" *ngIf="registerForm.controls['username'].hasError('pattern') && registerForm.controls['username'].touched">
+        Only alphabets are allowed.
+      </ion-text>
+    </div>
+
+   
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Student Name</ion-label>
+        <ion-input formControlName="studentName"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['studentName'].hasError('required') && registerForm.controls['studentName'].touched">
+        Student Name is required.
+      </ion-text>
+      <ion-text color="danger" *ngIf="registerForm.controls['studentName'].hasError('pattern') && registerForm.controls['studentName'].touched">
+        Only alphabets are allowed.
+      </ion-text>
+    </div>
+
+  
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Class</ion-label>
+        <ion-input formControlName="class"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['class'].hasError('required') && registerForm.controls['class'].touched">
+        Class is required.
+      </ion-text>
+    </div>
+
+    
+    <div style="margin-top: 20px;">
+      <ion-item>
+        <ion-label>Gender</ion-label>
+      </ion-item>
+      <ion-radio-group formControlName="gender">
+        <ion-item>
+          <ion-radio slot="start" value="male"></ion-radio>
+          <ion-label>Male</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio slot="start" value="female"></ion-radio>
+          <ion-label>Female</ion-label>
+        </ion-item>
+      </ion-radio-group>
+    </div>
+
+    
+    <div style="margin-top: 20px;">
+      <ion-item class="input-outline">
+        <ion-label>Medium</ion-label>
+        <ion-select formControlName="medium" placeholder="Select Medium">
+          <ion-select-option value="ICSE">ICSE</ion-select-option>
+          <ion-select-option value="CBSE">CBSE</ion-select-option>
+          <ion-select-option value="State Syllabus">State Syllabus</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['medium'].hasError('required') && registerForm.controls['medium'].touched">
+        Medium is required.
+      </ion-text>
+    </div>
+
+    
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">School Name</ion-label>
+        <ion-input formControlName="schoolName"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['schoolName'].hasError('required') && registerForm.controls['schoolName'].touched">
+        School Name is required.
+      </ion-text>
+    </div>
+
+    
+    <div style="margin-top: 20px;">
+      <ion-item>
+        <ion-label>Subjects</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="maths" slot="start"></ion-checkbox>
+        <ion-label>Maths</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="science" slot="start"></ion-checkbox>
+        <ion-label>Science</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="social" slot="start"></ion-checkbox>
+        <ion-label>Social</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="kannada" slot="start"></ion-checkbox>
+        <ion-label>Kannada</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="sanskrit" slot="start"></ion-checkbox>
+        <ion-label>Sanskrit</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="hindi" slot="start"></ion-checkbox>
+        <ion-label>Hindi</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox formControlName="allSubjects" slot="start"></ion-checkbox>
+        <ion-label>All Subjects</ion-label>
+      </ion-item>
+    </div>
+
+    
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Total Fees (₹)</ion-label>
+        <ion-input formControlName="fees" type="number" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['fees'].hasError('required') && registerForm.controls['fees'].touched">
+        Fees are required.
+      </ion-text>
+    </div>
+    <div>
+      <ion-item class="input-outline" (click)="initiatePayment()">
+        <ion-label position="floating">Registration Fee (₹)</ion-label>
+        <ion-input formControlName="registrationFee" type="number" value="500" readonly></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['registrationFee'].hasError('required') && registerForm.controls['registrationFee'].touched">
+        Registration Fee is required.
+      </ion-text>
+    </div>
+
+   
+    <div style="margin-top: 20px;">
+      <ion-item>
+        <ion-label>Payment Mode</ion-label>
+      </ion-item>
+      <ion-radio-group formControlName="paymentMode">
+        <ion-item>
+          <ion-radio slot="start" value="monthly"></ion-radio>
+          <ion-label>Monthly</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio slot="start" value="quarterly"></ion-radio>
+          <ion-label>Quarterly</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio slot="start" value="yearly"></ion-radio>
+          <ion-label>Yearly</ion-label>
+        </ion-item>
+      </ion-radio-group>
+    </div>
+
+   
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Date of Joining</ion-label>
+        <ion-datetime presentation="date" formControlName="dateOfJoining"></ion-datetime>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['dateOfJoining'].hasError('required') && registerForm.controls['dateOfJoining'].touched">
+        Date of Joining is required.
+      </ion-text>
+    </div>
+
+
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input formControlName="phone" type="tel"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['phone'].hasError('required') && registerForm.controls['phone'].touched">
+        Phone number is required.
+      </ion-text>
+      <ion-text color="danger" *ngIf="registerForm.controls['phone'].hasError('pattern') && registerForm.controls['phone'].touched">
+        Enter a valid 10-digit phone number.
+      </ion-text>
+    </div>
+
+   
+    <div>
+      <ion-item class="input-outline">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched">
+        Password is required.
+      </ion-text>
+    </div>
+
+   
+    
+    <div style="margin-top: 30px;">
+      <ion-button expand="full"  color="dark" type="submit" [disabled]="registerForm.invalid">Register</ion-button>
+    </div>
+
+  </form>
+</ion-content>

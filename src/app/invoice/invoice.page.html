@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invoice Receipt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="invoiceData">
+    <ion-card-header>
+      <ion-card-title>Invoice #{{ invoiceData.invoice_id }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Student Name:</strong> {{ invoiceData.student_name }}</p>
+      <p><strong>Amount Paid:</strong> {{ invoiceData.amount_paid | currency }}</p>
+      <p><strong>Date:</strong> {{ invoiceData.payment_date | date }}</p>
+      <p><strong>Payment Method:</strong> {{ invoiceData.payment_method }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="!invoiceData">
+    <ion-card-content>
+      <p>No invoice data available. Please check the invoice ID.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

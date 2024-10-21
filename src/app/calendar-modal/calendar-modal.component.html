@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Attendance Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let status of attendanceArray; let i = index">
+    <ion-button (click)="toggleAttendance(i)">
+      {{ status }} - Day {{ i + 1 }}
+    </ion-button>
+  </div>
+  <ion-button expand="full" (click)="closeModal()">Save Attendance</ion-button>
+</ion-content>

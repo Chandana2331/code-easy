@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="dark"> 
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/tab1"></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Marks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngIf="marks.length > 0">
+    <ion-item *ngFor="let mark of marks">
+      <ion-label>
+        <h2>{{ mark.subject }}</h2>
+        <p>Mark: {{ mark.mark }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

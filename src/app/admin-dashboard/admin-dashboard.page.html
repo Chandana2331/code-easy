@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Admin Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Welcome to the Admin Dashboard!</h3><br>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Marks Overview</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>View and Manage Student Marks.</p>
+      <ion-button expand="full" color="dark" (click)="viewMarks()">View Marks</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Attendance Overview</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Check and Manage Student Attendance.</p>
+      <ion-button expand="full" color="dark" (click)="viewAttendance()">View Attendance</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Student Fee Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Student complete Fee Details History.</p>
+      <ion-button expand="full" color="dark" (click)="viewFees()">View Fee Details</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Student List</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Student complete Profile Details.</p>
+      <ion-button expand="full" color="dark" (click)="viewStudentProfiles()">View Student Profiles</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Staff Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>View and Manage Staff Information.</p>
+      <ion-button expand="full" color="dark" (click)="viewStaffDetails()">View Staff Details</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Enquiry</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Handle Student and Parent Inquiries.</p>
+      <ion-button expand="full" color="dark" (click)="handleEnquiry()">Manage Enquiries</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

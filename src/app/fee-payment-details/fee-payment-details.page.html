@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Fee Payment Details</ion-title>
+    <ion-buttons slot="start">
+     
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-item *ngFor="let payment of feePayments">
+      <ion-label>
+        <h2>Amount: {{ payment.amount }}</h2>
+        <p>Date: {{ payment.date }}</p>
+        <p>Transaction ID: {{ payment.transactionId }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

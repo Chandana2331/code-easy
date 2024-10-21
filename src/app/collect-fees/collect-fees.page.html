@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Pay Fees Online</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Pay via PhonePe</h2>
+  <p>Please scan the QR code below to pay the fees or contact the admin for assistance.</p>
+  
+ 
+  <ion-item lines="none">
+    <ion-label>
+      <h3>Lakshminarayan:</h3>
+      <p>Phone: +91 98765 43210</p>
+    </ion-label>
+  </ion-item>
+  
+ 
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="assets/WhatsApp Image 2024-10-04 at 19.11.58.jpeg" alt="PhonePe QR Code" style="width: 200px; height: 200px;">
+  </div>
+  
+  <ion-button expand="full" color="white" style="margin-top: 20px;" (click)="openPhonePeApp()">
+    <a href="https://www.phonepe.com/app-download/">Open PhonePe</a>
+  </ion-button>
+</ion-content>

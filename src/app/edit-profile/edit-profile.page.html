@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/profile"></ion-back-button>  
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [(ngModel)]="studentName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Class</ion-label>
+      <ion-input [(ngModel)]="studentClass"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input [(ngModel)]="studentPhone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Subjects</ion-label>
+      <ion-input [(ngModel)]="subjects"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Total Fees</ion-label>
+      <ion-input type="number" [(ngModel)]="Totalfees"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date of Joining</ion-label>
+      <ion-input type="date" [(ngModel)]="date"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="dark" (click)="saveProfile()">
+    Save Changes
+  </ion-button>
+</ion-content>

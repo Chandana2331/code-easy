@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab1"></ion-back-button>  
+    </ion-buttons>
+    <ion-title>Student Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="profile-header">
+    <img src="assets/3f9470b34a8e3f526dbdb022f9f19cf7__4_-removebg-preview.png" alt="Profile Logo" class="profile-logo">
+    
+    <ion-card class="name-card">
+      <ion-card-header>
+        <ion-card-title>{{ studentName }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+ 
+  <ion-card class="detail-card">
+    <ion-card-content>
+      <p><strong>Class:</strong> {{ studentClass }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="detail-card">
+    <ion-card-content>
+      <p><strong>Phone:</strong> {{ studentPhone }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="detail-card">
+    <ion-card-content>
+      <p><strong>Subjects Joined:</strong> {{ subjects }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="detail-card">
+    <ion-card-content>
+      <p><strong>Total Fees:</strong> {{ Totalfees }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="detail-card">
+    <ion-card-content>
+      <p><strong>Date of Joining:</strong> {{ date }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button fill="outline" color="primary" class="edit-button" (click)="editProfile()">
+    Edit Profile
+  </ion-button>
+</ion-content>
